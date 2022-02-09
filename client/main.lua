@@ -36,7 +36,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     isWorking = false
     JobsDone = 0
 
-    if PlayerJob.name == "unemployed" or PlayerJob.name == "planepilot" then
+    if PlayerJob.name == "unemployed" or PlayerJob.name == "helopilot" then
         TruckVehBlip = AddBlipForCoord(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z)
         SetBlipSprite(TruckVehBlip, 307)
         SetBlipDisplay(TruckVehBlip, 4)
@@ -64,7 +64,7 @@ AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
     local OldlayerJob = PlayerJob.name
     PlayerJob = JobInfo
 
-    if PlayerJob.name == "unemployed" or PlayerJob.name == "planepilot" then
+    if PlayerJob.name == "unemployed" or PlayerJob.name == "helopilot" then
         TruckVehBlip = AddBlipForCoord(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z)
         SetBlipSprite(TruckVehBlip, 307)
         SetBlipDisplay(TruckVehBlip, 4)
@@ -92,7 +92,7 @@ Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(1)
         if isLoggedIn and QBCore ~= nil then
-            if PlayerJob.name == "unemployed" or PlayerJob.name == "planepilot" then
+            if PlayerJob.name == "unemployed" or PlayerJob.name == "helopilot" then
                 if IsControlJustReleased(0, Keys["DEL"]) then
                     if IsPedInAnyVehicle(PlayerPedId()) and isTruckerVehicle(GetVehiclePedIsIn(PlayerPedId(), false)) then
                         getNewLocation()
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
                                         DeleteVehicle(GetVehiclePedIsIn(PlayerPedId()))
                                         TriggerServerEvent('HIJINX-Pilotjob:server:DoBail', false)
                                     else
-                                        QBCore.Functions.Notify('This is not the plane!', 'error')
+                                        QBCore.Functions.Notify('This is not the right Helicopter!', 'error')
                                     end
                                 else
                                     QBCore.Functions.Notify('You must be a driver..')
