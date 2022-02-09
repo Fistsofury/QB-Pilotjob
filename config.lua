@@ -15,41 +15,49 @@ Config.BailPrice = 250
 
 Config.Locations = {
     ["main"] = {
-        label = "PaySlip",
-        coords = {x = 2137.65, y = 4791.34, z = 40.97, h = 306.27},
+        label = "PaySlip",--Dock
+        coords = {x = 485.36, y = -3383.71, z = 6.07, h = 181.66},--trailer door
     },
     ["vehicle"] = {
-        label = "Plane PickUp",
-        coords = {x = 2134.43, y = 4779.82, z = 40.97, h = 26.53},
+        label = "Helo PickUp",--Docks
+        coords = {x = 478.35, y = -3370.5, z = 6.07, h = 0.44}, --Landing pad
     },
     ["runways"] ={
         [1] = {
+            name = "yacht1", --Yacht by the pier
+            coords = {x = -2058.94, y = -1028.53, z = 11.91, h = 157.8}, --bar area
+        },
+        [2] = {
+            name = "cayomil", -- Cayo island (remove if you don't have Cayo Island enabled)
+            coords = {x = 4930.34, y = -5295.75, z = 5.7, h = 86.72}, --Millitary bunker
+        },
+        [3] = {
+            name = "yacht2", --Paleto yacht
+            coords = {x = -1404.78, y = 6745.59, z = 11.91, h = 162.86}, --Bar area
+        },
+        [4] = {
+            name = "hospital1", -- Los Santos Central Hospital
+            coords = {x = 334.89, y = -1431.48, z = 46.51, h = 315.56},
+        },
+        [5] = {
+            name = "casino",    -- Casino
+            coords = {x = 978.2, y = 62.07, z = 120.24, h = 322.71}, --Roof top delivery
+        },
+        [6] = {
             name = "sandyairfield",
             coords = {x = 1725.86, y = 3325.08, z = 41.22, h = 12.05},
         },
-        [2] = {
-            name = "grapeseed",
-            coords = {x = 2137.85, y = 4771.76, z = 41.0, h = 201.27},
+        [7] = {
+            name = "sandyairfield", --Sandy Airfield
+            coords = {x = 1725.86, y = 3325.08, z = 41.22, h = 12.05}, --Hangar delivery
         },
-        [3] = {
-            name = "army",
-            coords = {x = -2297.53, y = 3187.42, z = 32.81, h = 64.16},
-        },
-        [4] = {
-            name = "battleship",
-            coords = {x = 3090.41, y = -4722.48, z = 15.26, h = 132.45},
-        },
-        [5] = {
-            name = "island",    -- remove if you don't have Cayo Island enabled.
-            coords = {x = 4434.17, y = -4469.34, z = 4.33, h = 125.67},
-        },
-        [6] = {
-            name = "lsia",
-            coords = {x = -1242.2, y = -3393.33, z = 13.94, h = 227.9},
+        [8] = {
+            name = "wezel", --wezel news
+            coords = {x = -568.83, y = -927.758, z = 36.83, h = 283.64}, --door / paper delivery
         },
     },
 }
 
 Config.Vehicles = {
-    ["cuban800"] = "Cuban Plane",
+    ["frogger"] = "Frogger Helicopter",
 }
